@@ -44,3 +44,6 @@ yarn.lock
 *.zip
 *.tar.gz
 *.rar
+
+# 忽略子项目的 .gitignore 文件
+*/**/.gitignore
