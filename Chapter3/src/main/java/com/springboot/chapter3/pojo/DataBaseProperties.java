@@ -26,7 +26,7 @@ public class DataBaseProperties {
     }
 
     public void setDriverName(String driverName) {
-        System.err.println(driverName);
+        System.out.println(driverName);
         this.driverName = driverName;
     }
 
@@ -35,7 +35,7 @@ public class DataBaseProperties {
     }
 
     public void setUrl(String url) {
-        System.err.println(url);
+        System.out.println(url);
         this.url = url;
     }
 
