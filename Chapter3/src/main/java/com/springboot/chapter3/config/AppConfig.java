@@ -22,7 +22,8 @@ import java.util.Properties;
 //@ComponentScan(basePackages = "com.springboot.chapter3.pojo")
 //@ComponentScan(basePackageClasses = User.class)
 @ComponentScan(basePackages = "com.springboot.chapter3.*",
-        excludeFilters = {@Filter(classes = Service.class)})
+        excludeFilters = {@Filter(classes = Service.class)},
+        lazyInit = true)
 public class AppConfig {
 
     @Bean("dbcpDataSource")

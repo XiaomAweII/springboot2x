@@ -15,17 +15,16 @@ public class BussinessPerson implements Person {
 
     private Animal animal = null;
 
-    public BussinessPerson(@Autowired @Qualifier("dog") Animal animal) {
-        this.animal = animal;
-    }
-
     @Override
     public void service() {
         this.animal.use();
     }
 
     @Override
+    @Autowired
+    @Qualifier("dog")
     public void setAnimal(Animal animal) {
+        System.out.println("延迟依赖注入");
         this.animal = animal;
     }
 

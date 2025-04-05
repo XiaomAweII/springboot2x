@@ -20,10 +20,6 @@ public class IocTest {
     public static void main(String[] args) {
         ApplicationContext ctx
                 = new AnnotationConfigApplicationContext(AppConfig.class);
-        User user = ctx.getBean(User.class);
-        log.info("user.getId : {} ; user.getUserName : {}",
-                user.getId(), user.getUserName());
-
         Person person = ctx.getBean(BussinessPerson.class);
         person.service();
 
