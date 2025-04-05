@@ -18,10 +18,11 @@ public class IocTest {
     private static Logger log = LoggerFactory.getLogger(IocTest.class);
 
     public static void main(String[] args) {
-        ApplicationContext ctx
+        AnnotationConfigApplicationContext ctx
                 = new AnnotationConfigApplicationContext(AppConfig.class);
         Person person = ctx.getBean(BussinessPerson.class);
         person.service();
+        ctx.close();
 
     }
 
