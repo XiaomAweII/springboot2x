@@ -1,6 +1,8 @@
 package com.springboot.chapter3.config;
 
 
+import com.springboot.chapter3.definition.Person;
+import com.springboot.chapter3.pojo.BussinessPerson;
 import com.springboot.chapter3.pojo.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +23,10 @@ public class IocTest {
         User user = ctx.getBean(User.class);
         log.info("user.getId : {} ; user.getUserName : {}",
                 user.getId(), user.getUserName());
+
+        Person person = ctx.getBean(BussinessPerson.class);
+        person.service();
+
     }
 
 }
