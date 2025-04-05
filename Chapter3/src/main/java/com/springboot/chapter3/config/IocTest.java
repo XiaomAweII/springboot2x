@@ -3,6 +3,7 @@ package com.springboot.chapter3.config;
 
 import com.springboot.chapter3.definition.Person;
 import com.springboot.chapter3.pojo.BussinessPerson;
+import com.springboot.chapter3.pojo.DataBaseProperties;
 import com.springboot.chapter3.pojo.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,9 +21,10 @@ public class IocTest {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx
                 = new AnnotationConfigApplicationContext(AppConfig.class);
-        Person person = ctx.getBean(BussinessPerson.class);
-        person.service();
+        DataBaseProperties properties = ctx.getBean(DataBaseProperties.class);
+        System.out.println("properties = " + properties);
         ctx.close();
+
 
     }
 
