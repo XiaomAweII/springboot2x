@@ -13,9 +13,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class BussinessPerson implements Person {
 
-    @Autowired(required = false)
-    @Qualifier("dog")
     private Animal animal = null;
+
+    public BussinessPerson(@Autowired @Qualifier("dog") Animal animal) {
+        this.animal = animal;
+    }
 
     @Override
     public void service() {
@@ -23,7 +25,6 @@ public class BussinessPerson implements Person {
     }
 
     @Override
-//    @Autowired
     public void setAnimal(Animal animal) {
         this.animal = animal;
     }
