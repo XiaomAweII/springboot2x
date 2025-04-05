@@ -1,6 +1,8 @@
 package com.springboot.chapter3.pojo;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,12 +10,11 @@ import org.springframework.stereotype.Component;
  * @create 2025-04-05 22:59
  */
 @Component
+@ConfigurationProperties("database")
 public class DataBaseProperties {
 
-    @Value("${database.driverName}")
     private String driverName = null;
 
-    @Value("${database.url}")
     private String url = null;
 
     private String username = null;
@@ -42,7 +43,6 @@ public class DataBaseProperties {
         return username;
     }
 
-    @Value("${database.username}")
     public void setUsername(String username) {
         this.username = username;
     }
@@ -51,7 +51,6 @@ public class DataBaseProperties {
         return password;
     }
 
-    @Value("${database.password}")
     public void setPassword(String password) {
         this.password = password;
     }
