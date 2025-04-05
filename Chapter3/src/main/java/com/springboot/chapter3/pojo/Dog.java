@@ -1,6 +1,7 @@
 package com.springboot.chapter3.pojo;
 
 import com.springboot.chapter3.definition.Animal;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
  * @create 2025-04-05 16:03
  */
 @Component
+@Primary
 public class Dog implements Animal {
 
     @Override

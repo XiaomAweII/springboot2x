@@ -3,6 +3,7 @@ package com.springboot.chapter3.pojo;
 import com.springboot.chapter3.definition.Animal;
 import com.springboot.chapter3.definition.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,17 +14,18 @@ import org.springframework.stereotype.Component;
 public class BussinessPerson implements Person {
 
     @Autowired(required = false)
-    private Animal dog = null;
+    @Qualifier("dog")
+    private Animal animal = null;
 
     @Override
     public void service() {
-        this.dog.use();
+        this.animal.use();
     }
 
     @Override
-    @Autowired
-    public void setAnimal(Animal dog) {
-        this.dog = dog;
+//    @Autowired
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
 
 }
